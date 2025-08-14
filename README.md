@@ -22,27 +22,27 @@ Here are some screenshots showcasing the FileGuard application in action.
 
 **1. Main Dashboard**
 *The main entry point of the application where you can select a directory to scan.*
-!Main Dashboard.png)
+![Main Dashboard](./webimages/Screenshot%20(294).png)
 
 **2. Scan in Progress**
 *Real-time progress of the file analysis.*
-!Scan in Progress.png)
+![Scan in Progress](./webimages/Screenshot%20(295).png)
 
 **3. Text File Duplicate Results**
 *Identifies text files with similar content.*
-!Text File Duplicates.png)
+![Text File Duplicate Results](./webimages/Screenshot%20(296).png)
 
 **4. Video File Duplicate Results**
 *Groups visually identical videos, even with different formats or encodings.*
-!Video File Duplicates.png)
+![Video File Duplicate Results](./webimages/Screenshot%20(297).png)
 
 **5. Image File Duplicate Results**
 *Finds duplicate images based on their visual content.*
-!Image File Duplicates.png)
+![Image File Duplicates](./webimages/Screenshot%20(309).png)
 
 **6. Managing Duplicates**
 *Review and manage the detected duplicate files.*
-!Managing Duplicates.png)
+![Managing Duplicates](./webimages/Screenshot%20(310).png)
 
 ## 🚀 Getting Started
 
