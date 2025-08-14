@@ -1,66 +1,90 @@
-# FileGuard - Intelligent Duplicate Detection & File Management
+# FileGuard: Content-Based Duplicate File Manager
 
-**FileGuard** is a powerful and intuitive web application designed to help you find and manage duplicate files on your system. It uses advanced algorithms to accurately identify duplicates, categorize files, and provide an easy-to-use interface for cleaning up your storage.
+A Spring Boot web application designed to intelligently find and manage duplicate files (including text, images, and videos) by analyzing their content, not just names or metadata.
+
+## 📖 Description
+
+FileGuard solves the common problem of redundant files cluttering storage space. Unlike traditional duplicate finders that rely on simple checksums or file names, this project uses advanced content analysis and fuzzy hashing. This allows it to identify visually similar videos (even in different formats or encodings), text files with minor differences, and other near-duplicates.
+
+The backend is built with **Java** and the **Spring Boot** framework, providing a robust server-side application. The user interface is rendered using **Thymeleaf**, making it accessible from any web browser.
 
 ## ✨ Features
 
--   **🚀 High-Speed Scanning**: Optimized engine processes thousands of files per second with minimal resource usage.
--   **🧠 Smart Duplicate Detection**: Identifies duplicate files based on content hash, ensuring accuracy regardless of filename.
--   **🎵 Advanced Music Analysis**: Detects duplicate audio files by analyzing audio fingerprints and metadata, even with different formats or quality.
--   **🎬 Advanced Video Analysis**: Finds duplicate video files across different formats, qualities, and resolutions using video fingerprinting.
--   **📂 Automatic Categorization**: Automatically organizes scanned files into categories like Photos, Documents, Videos, Music, and Archives.
--   **📊 Interactive Dashboard**: View detailed scan results, including statistics on total files, categorized files, and storage usage.
--   **🗑️ Safe Deletion**: Review groups of duplicate files, select the ones you want to remove, and delete them permanently with a confirmation step.
--   **💅 Modern UI**: A clean, responsive, and user-friendly web interface built with Bootstrap and enhanced with animations.
+*   **Content-Based Detection:** Finds duplicates by analyzing file content, not just metadata like name or size.
+*   **Fuzzy Hashing:** Employs algorithms like `ssdeep` to find similar, but not necessarily identical, files.
+*   **Broad Video Format Support:** Accurately detects duplicate videos across different formats (MP4, AVI, MOV, MKV, etc.) and compression levels.
+*   **Web-Based Interface:** An easy-to-use UI to specify a directory, launch a scan, and review the duplicate file groups.
+*   **Configurable Similarity Thresholds:** Fine-tune the sensitivity of the detection algorithm for different file types.
 
-## 🛠️ Tech Stack
+## 📸 Screenshots
 
--   **Backend**: Java, Spring Boot
--   **Frontend**: Thymeleaf, HTML5, CSS3, JavaScript
--   **Styling**: Bootstrap 5, Font Awesome
--   **Build Tool**: Maven (or Gradle)
+Here are some screenshots showcasing the FileGuard application in action.
+
+**1. Main Dashboard**
+*The main entry point of the application where you can select a directory to scan.*
+!Main Dashboard.png)
+
+**2. Scan in Progress**
+*Real-time progress of the file analysis.*
+!Scan in Progress.png)
+
+**3. Text File Duplicate Results**
+*Identifies text files with similar content.*
+!Text File Duplicates.png)
+
+**4. Video File Duplicate Results**
+*Groups visually identical videos, even with different formats or encodings.*
+!Video File Duplicates.png)
+
+**5. Image File Duplicate Results**
+*Finds duplicate images based on their visual content.*
+!Image File Duplicates.png)
+
+**6. Managing Duplicates**
+*Review and manage the detected duplicate files.*
+!Managing Duplicates.png)
 
 ## 🚀 Getting Started
 
+Follow these instructions to get a copy of the project up and running on your local machine for development and testing purposes.
+
 ### Prerequisites
 
--   Java JDK 17 or later
--   Maven 3.x or Gradle 7.x
--   Git
+You will need the following software installed on your system to run the application.
+*   **Java Development Kit (JDK) 17** or newer.
+*   Apache Maven
+*   **ssdeep** (for fuzzy hashing). This must be installed and available in your system's PATH.
+*   An IDE like IntelliJ IDEA, Eclipse, or VS Code is recommended.
 
-### Installation & Running
+### Installation
 
-1.  **Clone the repository:**
+A step-by-step guide on how to set up the development environment.
+
+1.  Clone the repository:
     ```bash
     git clone https://github.com/sethu227/Javaproject.git
+    ```
+2.  Navigate into the project directory:
+    ```bash
     cd Javaproject
     ```
-
-2.  **Build the project:**
-    *Using Maven:*
+3.  Build the project and install dependencies using Maven:
     ```bash
-    mvn clean install
-    ```
-    *Using Gradle:*
-    ```bash
-    gradle build
+    mvn install
     ```
 
-3.  **Run the application:**
+## 🏃‍♀️ Usage
+
+You can run the application in two ways:
+
+1.  **Using the Maven Spring Boot Plugin (Recommended for development):**
     ```bash
-    java -jar target/FileGuard-0.0.1-SNAPSHOT.jar 
+    mvn spring-boot:run
     ```
-    *(Note: The JAR file name might be different. Check your `target` or `build/libs` directory.)*
 
-4.  **Access the application:**
-    Open your web browser and navigate to `http://localhost:8080`.
+2.  **Running the executable JAR:**
+    ```bash
+    java -jar target/appmanager-0.0.1-SNAPSHOT.jar
+    ```
 
-## 📖 How to Use
-
-1.  **Start a Scan**: On the home page, enter the full path to the directory you want to scan.
-2.  **Enable Categorization (Optional)**: Check the "Enable Smart Categorization" box and select the file types you want to organize. The application will create subfolders for these categories within the scanned directory and move the files accordingly.
-3.  **Launch Scan**: Click the "Launch Scan" button to begin.
-4.  **Review Results**: After the scan is complete, you will see a summary of all files found.
-5.  **View Duplicates**: Click the "View Duplicates" button to see a list of all duplicate files, grouped by their content hash.
-6.  **Remove Duplicates**: Select the checkboxes next to the files you wish to delete. The "Remove Selected" button will show you the number of files and the total space you will save.
-7.  **Confirm Deletion**: A confirmation pop-up will appear to prevent accidental deletion. Once confirmed, the selected files will be permanently removed from your system.
+Once the application is running, open your web browser and navigate to `http://localhost:8080` to access the FileGuard interface.
